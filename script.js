@@ -16,16 +16,6 @@ prisma.$on('query', (e) => {
 
 async function main() {
 
-  console.log("with_all before", await prisma.with_all_relation_types.findMany())
-  console.log("with_compound_unique before", await prisma.with_compound_unique.findMany())
-
-  await prisma.with_all_relation_types.deleteMany()
-  await prisma.with_compound_unique.deleteMany()
-
-  console.log("with_all after", await prisma.with_all_relation_types.findMany())
-  console.log("with_compound_unique after", await prisma.with_compound_unique.findMany())
-
-
   for (let i = 0; i < 10; i++) {
 
     await prisma.with_all_relation_types.create({

@@ -1,9 +1,9 @@
 {
     "name": "repro",
     "devDependencies": {
-        "@prisma/client": "4.11.0"
+        "@prisma/client": "4.10.1"
     },
     "dependencies": {
-        "prisma": "4.11.0"
+        "prisma": "4.10.1"
     }
 }
