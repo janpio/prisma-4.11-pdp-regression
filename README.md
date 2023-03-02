@@ -1,0 +1,11 @@
+- Add database connection string to `.env` file (E.g. via https://db-provision.cloud.prisma.io/)
+- `npm install`
+- `npx prisma -v` to confirm 4.10.1
+- `npx prisma migrate reset -f && npx prisma db push`
+- `node script.js`
+- Observe success
+- Update `package.json` to `4.11.0`, run `npm install`
+- `npx prisma -v` to confirm 4.11.0
+- `npx prisma migrate reset -f && npx prisma db push`
+- `node script.js`
+- Observe failure

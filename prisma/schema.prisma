@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource pg {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model with_all_relation_types {
+  id   Int    @id
+  name String
+
+  to_compound_unique with_compound_unique? @relation("WART_WCU")
+}
+
+model with_compound_unique {
+  id   Int
+  name String
+
+  WART_id                 Int?                     @unique
+  with_all_relation_types with_all_relation_types? @relation("WART_WCU", fields: [WART_id], references: [id])
+
+  @@unique([id, name])
+}
